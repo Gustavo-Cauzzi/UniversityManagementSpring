@@ -22,7 +22,7 @@ public class SessionResource {
     @GetMapping("/current")
     public ResponseEntity<Map<String, Object>> currentAuthentication() {
         HashMap<String, Object> body = new HashMap<>();
-        body.put("auth", this.authService.getDefaults());
+        body.put("session", this.authService.getDefaults());
         return ResponseEntity.ok(body);
     }
 }

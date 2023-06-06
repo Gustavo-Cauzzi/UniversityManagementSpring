@@ -49,7 +49,7 @@ public class TokenProvider {
         return Jwts
             .builder()
             .setSubject(String.valueOf(session))
-            .claim(TokenConstants.AUTHORITIES.getKey() , "auth")
+            .claim(TokenConstants.AUTHORITIES.getKey() , "admin")
             .claim(TokenConstants.SESSION.getKey() , session)
             .signWith(key, SignatureAlgorithm.HS512)
             .setExpiration(validity)
@@ -65,7 +65,7 @@ public class TokenProvider {
             .map(SimpleGrantedAuthority::new)
             .collect(Collectors.toList());
 
-        User principal = new User(claims.getSubject(), "", authorities);
+        User principal = new User(claims.getSubject(), "123123", authorities);
 
         return new WebAutheticationToken(principal, authorities, token, claims);
     }
