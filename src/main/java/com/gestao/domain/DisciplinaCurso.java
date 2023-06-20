@@ -1,5 +1,8 @@
 package com.gestao.domain;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -10,11 +13,19 @@ public class DisciplinaCurso {
     @Column(name = "cod_disciplina_curso")
     private Integer codDisciplinaCurso;
 
+    @Column(name = "cod_curso", insertable = false, updatable = false)
+    private Integer codCurso;
+
+    @Column(name = "cod_disciplina", insertable = false, updatable = false)
+    private Integer codDisciplina;
+
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "cod_curso", nullable = false)
     private Curso curso;
 
     @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "cod_disciplina", nullable = false)
     private Disciplina disciplina;
 
@@ -49,5 +60,21 @@ public class DisciplinaCurso {
 
     public void setDisciplina(Disciplina disciplina) {
         this.disciplina = disciplina;
+    }
+
+    public Integer getCodCurso() {
+        return codCurso;
+    }
+
+    public void setCodCurso(Integer codCurso) {
+        this.codCurso = codCurso;
+    }
+
+    public Integer getCodDisciplina() {
+        return codDisciplina;
+    }
+
+    public void setCodDisciplina(Integer codDisciplina) {
+        this.codDisciplina = codDisciplina;
     }
 }
