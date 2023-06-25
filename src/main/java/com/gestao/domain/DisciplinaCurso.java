@@ -13,20 +13,20 @@ public class DisciplinaCurso {
     @Column(name = "cod_disciplina_curso")
     private Integer codDisciplinaCurso;
 
-    @Column(name = "cod_curso", insertable = false, updatable = false)
+    @Column(name = "cod_curso")
     private Integer codCurso;
 
-    @Column(name = "cod_disciplina", insertable = false, updatable = false)
+    @Column(name = "cod_disciplina")
     private Integer codDisciplina;
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "cod_curso", nullable = false)
+    @JoinColumn(name = "cod_curso", insertable = false, updatable = false)
     private Curso curso;
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "cod_disciplina", nullable = false)
+    @JoinColumn(name = "cod_disciplina", insertable = false, updatable = false)
     private Disciplina disciplina;
 
     public DisciplinaCurso() {

@@ -16,7 +16,7 @@ import com.gestao.domain.Curso;
 import com.gestao.service.CursoService;
 
 @RestController
-@RequestMapping("/api/v1/curso")
+@RequestMapping("/api/v1/cursos")
 public class CursoResource {
 
 	private final CursoService cursoService;

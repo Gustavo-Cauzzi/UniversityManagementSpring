@@ -25,10 +25,10 @@ public class Aluno {
 
 	@ManyToOne
 	@OnDelete(action = OnDeleteAction.CASCADE)
-	@JoinColumn(name = "cod_curso", nullable = false)
+	@JoinColumn(name = "cod_curso", referencedColumnName = "cod_curso", insertable = false, updatable = false)
 	private Curso curso;
 
-	@Column(name = "cod_curso", insertable = false, updatable = false)
+	@Column(name = "cod_curso", nullable = false)
 	private Integer codCurso;
 
 	public Aluno() {

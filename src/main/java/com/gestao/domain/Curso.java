@@ -16,10 +16,10 @@ public class Curso {
     @Column(name = "des_curso", unique = true, nullable = false)
     private String desCurso;
 
-//    @ManyToOne
-//    @OnDelete(action = OnDeleteAction.CASCADE)
-//    @JoinColumn(name = "cod_universidade", nullable = false)
-//    private Universidade universidade;
+    @ManyToOne
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "cod_universidade", insertable = false, updatable = false)
+    private Universidade universidade;
 
     @Column(name = "cod_universidade", nullable = false)
     private Integer codUniversidade;
@@ -49,13 +49,13 @@ public class Curso {
         this.desCurso = desCurso;
     }
 
-//    public Universidade getUniversidade() {
-//        return universidade;
-//    }
-//
-//    public void setUniversidade(Universidade universidade) {
-//        this.universidade = universidade;
-//    }
+    public Universidade getUniversidade() {
+        return universidade;
+    }
+
+    public void setUniversidade(Universidade universidade) {
+        this.universidade = universidade;
+    }
 
     public Integer getCodUniversidade() {
         return codUniversidade;
