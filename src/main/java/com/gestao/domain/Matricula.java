@@ -15,11 +15,6 @@ public class Matricula {
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "cod_universidade", nullable = false)
-    private Universidade universidade;
-
-    @ManyToOne
-    @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "cod_curso", nullable = false)
     private Curso curso;
 
@@ -27,9 +22,6 @@ public class Matricula {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "cod_aluno", nullable = false)
     private Aluno aluno;
-
-    @Column(name = "cod_universidade", insertable = false, updatable = false)
-    private Integer codUniversidade;
 
     @Column(name = "cod_curso", insertable = false, updatable = false)
     private Integer codCurso;
@@ -48,14 +40,6 @@ public class Matricula {
         this.codMatricula = codMatricula;
     }
 
-    public Universidade getUniversidade() {
-        return universidade;
-    }
-
-    public void setUniversidade(Universidade universidade) {
-        this.universidade = universidade;
-    }
-
     public Curso getCurso() {
         return curso;
     }
@@ -72,13 +56,6 @@ public class Matricula {
         this.aluno = aluno;
     }
 
-    public Integer getCodUniversidade() {
-        return codUniversidade;
-    }
-
-    public void setCodUniversidade(Integer codUniversidade) {
-        this.codUniversidade = codUniversidade;
-    }
 
     public Integer getCodCurso() {
         return codCurso;

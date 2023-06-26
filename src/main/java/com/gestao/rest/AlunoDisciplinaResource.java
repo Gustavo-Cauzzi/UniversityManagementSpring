@@ -29,11 +29,6 @@ public class AlunoDisciplinaResource {
 	public ResponseEntity<List<AlunoDisciplina>> findAll() {
 		return ResponseEntity.ok(this.alunoDisciplinaService.findAll());
 	}
-	
-	@GetMapping("{codAluno}")
-	public ResponseEntity<List<AlunoDisciplinaVO>> findByAluno(final Integer codAluno) {
-		return ResponseEntity.ok(this.alunoDisciplinaService.findByAluno(codAluno));
-	}
 
 	@PostMapping
 	public AlunoDisciplina save(@RequestBody AlunoDisciplina alunoDisciplina) {

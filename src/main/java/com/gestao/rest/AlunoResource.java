@@ -33,11 +33,6 @@ public class AlunoResource {
 	public ResponseEntity<Optional<Aluno>> findOne(@PathVariable final Integer codAluno) {
 		return ResponseEntity.ok(this.alunoService.findOne(codAluno));
 	}
-	
-	@GetMapping("/curso/{codCurso}")
-	public ResponseEntity<List<Aluno>> findAllByCurso(@PathVariable final Integer codCurso) {
-		return ResponseEntity.ok(this.alunoService.findAllByCodCurso(codCurso));
-	}
 
 	@PostMapping
 	public Aluno save(@RequestBody Aluno aluno) {

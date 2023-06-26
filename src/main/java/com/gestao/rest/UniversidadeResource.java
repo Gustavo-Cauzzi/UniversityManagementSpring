@@ -38,9 +38,4 @@ public class UniversidadeResource {
 	public Universidade save(@RequestBody Universidade universidade) {
 		return this.universidadeService.save(universidade);
 	}
-
-	@DeleteMapping("/{codUniversidade}")
-	public ResponseEntity<Void> deletePost(@PathVariable Integer codUniversidade) {
-		return this.universidadeService.deleteUniversidade(codUniversidade);
-	}
 }

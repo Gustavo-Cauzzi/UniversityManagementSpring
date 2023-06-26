@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.gestao.domain.DisciplinaCurso;
-import com.gestao.repository.DisciplinaCursoDAO;
 import com.gestao.repository.DisciplinaCursoRepository;
 import com.gestao.rest.vo.DisciplinaCursoVO;
 
@@ -14,20 +13,13 @@ import com.gestao.rest.vo.DisciplinaCursoVO;
 public class DisciplinaCursoService {
 
 	private final DisciplinaCursoRepository disciplinaCursoRepository;
-	private final DisciplinaCursoDAO disciplinaCursoDAO;
 
-	public DisciplinaCursoService(DisciplinaCursoRepository disciplinaCursoRepository,
-			DisciplinaCursoDAO disciplinaCursoDAO) {
+	public DisciplinaCursoService(DisciplinaCursoRepository disciplinaCursoRepository) {
 		this.disciplinaCursoRepository = disciplinaCursoRepository;
-		this.disciplinaCursoDAO = disciplinaCursoDAO;
 	}
 
 	public List<DisciplinaCurso> findAll() {
 		return this.disciplinaCursoRepository.findAll();
-	}
-
-	public List<DisciplinaCursoVO> findByCodCurso(Integer codCurso) {
-		return this.disciplinaCursoDAO.findDisciplinasCurso(codCurso);
 	}
 
 	public DisciplinaCurso save(final DisciplinaCurso disciplinaCurso) {

@@ -35,11 +35,4 @@ public class UniversidadeService {
         return this.universidadeRepository.save(universidade);
     }
 
-    public ResponseEntity<Void> deleteUniversidade(final Integer codUniversidade) {
-        this.cursoRepository.deleteAllByCodUniversidade(codUniversidade);
-        this.matriculaRepository.deleteAllByCodUniversidade(codUniversidade);
-        this.universidadeRepository.deleteById(codUniversidade);
-        return ResponseEntity.accepted().build();
-    }
-
 }

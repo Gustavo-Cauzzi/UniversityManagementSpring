@@ -30,10 +30,6 @@ public class AlunoService {
 	public Optional<Aluno> findOne(final Integer codAluno) {
 		return this.alunoRepository.findById(codAluno);
 	}
-	
-	public List<Aluno> findAllByCodCurso(final Integer codCurso) {
-		return this.alunoRepository.findAllByCodCurso(codCurso);
-	}
 
 	public Aluno save(final Aluno aluno) {
 		return this.alunoRepository.save(aluno);

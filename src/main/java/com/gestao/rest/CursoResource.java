@@ -30,11 +30,6 @@ public class CursoResource {
 		return ResponseEntity.ok(this.cursoService.findAll());
 	}
 
-	@GetMapping("/{codUniversidade}")
-	public ResponseEntity<List<Curso>> cursoUniv(@PathVariable final Integer codUniversidade) {
-		return ResponseEntity.ok(this.cursoService.findCursoUniv(codUniversidade));
-	}
-
 	@GetMapping("/findOne/{codMatricula}")
 	public ResponseEntity<Optional<Curso>> findOne(@PathVariable final Integer codCurso) {
 		return ResponseEntity.ok(this.cursoService.findOne(codCurso));

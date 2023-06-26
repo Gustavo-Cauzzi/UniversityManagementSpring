@@ -29,11 +29,6 @@ public class DisciplinaCursoResource {
 	public ResponseEntity<List<DisciplinaCurso>> findAll() {
 		return ResponseEntity.ok(this.disciplinaCursoService.findAll());
 	}
-	
-	@GetMapping("/{codCurso}")
-	public ResponseEntity<List<DisciplinaCursoVO>> findByCurso(@PathVariable final Integer codCurso) {
-		return ResponseEntity.ok(this.disciplinaCursoService.findByCodCurso(codCurso));
-	}
 
 	@PostMapping
 	public DisciplinaCurso save(@RequestBody DisciplinaCurso disciplinaCurso) {

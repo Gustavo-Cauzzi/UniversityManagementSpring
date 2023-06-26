@@ -29,10 +29,6 @@ public class CursoService {
 		return this.cursoRepository.findAll();
 	}
 
-	public List<Curso> findCursoUniv(Integer codUniv) {
-		return this.cursoRepository.findByCodUniversidade(codUniv);
-	}
-
 	public Optional<Curso> findOne(final Integer codCurso) {
 		return this.cursoRepository.findById(codCurso);
 	}
