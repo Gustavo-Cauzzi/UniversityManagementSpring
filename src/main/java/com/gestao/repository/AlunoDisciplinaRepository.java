@@ -1,8 +1,7 @@
 package com.gestao.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.gestao.domain.AlunoDisciplina;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AlunoDisciplinaRepository extends JpaRepository<AlunoDisciplina, Integer> {
 

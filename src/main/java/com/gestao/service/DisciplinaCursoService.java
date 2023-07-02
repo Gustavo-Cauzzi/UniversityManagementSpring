@@ -1,13 +1,11 @@
 package com.gestao.service;
 
-import java.util.List;
-
+import com.gestao.domain.DisciplinaCurso;
+import com.gestao.repository.DisciplinaCursoRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.gestao.domain.DisciplinaCurso;
-import com.gestao.repository.DisciplinaCursoRepository;
-import com.gestao.rest.vo.DisciplinaCursoVO;
+import java.util.List;
 
 @Service
 public class DisciplinaCursoService {

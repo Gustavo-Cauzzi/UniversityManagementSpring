@@ -1,16 +1,9 @@
 package com.gestao.domain;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "alunos")
@@ -22,6 +15,17 @@ public class Aluno {
 
 	@Column(name = "des_aluno", unique = true, nullable = false)
 	private String desAluno;
+
+	@JsonIgnoreProperties("aluno")
+	@OneToMany
+	@JoinColumn(name = "cod_aluno", insertable = false, updatable = false)
+	private List<Matricula> matriculas;
+
+	@JsonIgnoreProperties("aluno")
+	@OneToMany
+	@JoinColumn(name = "cod_aluno", insertable = false, updatable = false)
+	private List<AlunoDisciplina> alunoDisciplinas;
+
 
 	public Aluno() {
 	}
@@ -47,4 +51,19 @@ public class Aluno {
 		this.desAluno = desAluno;
 	}
 
+	public List<Matricula> getMatriculas() {
+		return matriculas;
+	}
+
+	public void setMatriculas(List<Matricula> matriculas) {
+		this.matriculas = matriculas;
+	}
+
+	public List<AlunoDisciplina> getAlunoDisciplinas() {
+		return alunoDisciplinas;
+	}
+
+	public void setAlunoDisciplinas(List<AlunoDisciplina> alunoDisciplinas) {
+		this.alunoDisciplinas = alunoDisciplinas;
+	}
 }

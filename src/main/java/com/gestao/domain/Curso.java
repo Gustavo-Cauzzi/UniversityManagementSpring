@@ -1,9 +1,9 @@
 package com.gestao.domain;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "cursos")
@@ -15,6 +15,16 @@ public class Curso {
 
     @Column(name = "des_curso", unique = true, nullable = false)
     private String desCurso;
+
+    @JsonIgnoreProperties("curso")
+    @OneToMany
+    @JoinColumn(name = "cod_curso", insertable = false, updatable = false)
+    private List<DisciplinaCurso> disciplinaCurso;
+
+    @JsonIgnoreProperties("curso")
+    @OneToMany
+    @JoinColumn(name = "cod_curso", insertable = false, updatable = false)
+    private List<Matricula> matriculas;
 
     public Curso() {
     }
@@ -40,4 +50,19 @@ public class Curso {
         this.desCurso = desCurso;
     }
 
+    public List<DisciplinaCurso> getDisciplinaCurso() {
+        return disciplinaCurso;
+    }
+
+    public void setDisciplinaCurso(List<DisciplinaCurso> disciplinaCurso) {
+        this.disciplinaCurso = disciplinaCurso;
+    }
+
+    public List<Matricula> getMatriculas() {
+        return matriculas;
+    }
+
+    public void setMatriculas(List<Matricula> matriculas) {
+        this.matriculas = matriculas;
+    }
 }

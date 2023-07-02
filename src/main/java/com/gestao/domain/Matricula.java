@@ -1,9 +1,9 @@
 package com.gestao.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-
-import jakarta.persistence.*;
 
 @Entity
 @Table(name = "matriculas")
@@ -13,20 +13,21 @@ public class Matricula {
     @Column(name = "cod_matricula")
     private Integer codMatricula;
 
+    @JsonIgnoreProperties({"disciplinaCurso", "matriculas"})
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "cod_curso", nullable = false)
+    @JoinColumn(name = "cod_curso", insertable = false, updatable = false)
     private Curso curso;
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "cod_aluno", nullable = false)
+    @JoinColumn(name = "cod_aluno", insertable = false, updatable = false)
     private Aluno aluno;
 
-    @Column(name = "cod_curso", insertable = false, updatable = false)
+    @Column(name = "cod_curso", nullable = false)
     private Integer codCurso;
 
-    @Column(name = "cod_aluno", insertable = false, updatable = false)
+    @Column(name = "cod_aluno", nullable = false)
     private Integer codAluno;
 
     public Matricula() {

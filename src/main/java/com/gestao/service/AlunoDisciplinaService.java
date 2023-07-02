@@ -1,12 +1,11 @@
 package com.gestao.service;
 
-import java.util.List;
-
+import com.gestao.domain.AlunoDisciplina;
+import com.gestao.repository.AlunoDisciplinaRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.gestao.domain.AlunoDisciplina;
-import com.gestao.repository.AlunoDisciplinaRepository;
+import java.util.List;
 
 @Service
 public class AlunoDisciplinaService {

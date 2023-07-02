@@ -1,13 +1,12 @@
 package com.gestao.service;
 
-import java.util.List;
-import java.util.Optional;
-
+import com.gestao.domain.Matricula;
+import com.gestao.repository.MatriculaRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.gestao.domain.Matricula;
-import com.gestao.repository.MatriculaRepository;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MatriculaService {

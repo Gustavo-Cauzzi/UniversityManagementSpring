@@ -1,7 +1,6 @@
 package com.gestao.rest;
 
 import com.gestao.service.AuthService;
-import com.gestao.utils.GenericResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
